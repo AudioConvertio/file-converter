@@ -1,6 +1,6 @@
 from classes.custom_exceptions import FileNotExists, FileInaccessible, IsADirectory
 
-LIST_OF_ACCEPTED_FORMATS = []
+LIST_OF_ACCEPTED_FORMATS = ['wmv']
 
 
 def file_accessible(file_path: str) -> None:
