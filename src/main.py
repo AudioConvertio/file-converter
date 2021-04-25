@@ -22,6 +22,7 @@ def main(argv: list) -> None:
 
         audio = Audio(input_file)
         print(audio)
+        audio.convert_file(output_format)
 
     except WrongNumberOfArguments:
         print("[ERROR] INVALID NUMBER OF ARGUMENTS")
