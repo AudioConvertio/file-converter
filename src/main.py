@@ -25,24 +25,21 @@ def main(argv: list) -> None:
         audio.convert_file(output_format)
 
     except WrongNumberOfArguments:
-        print("[ERROR] INVALID NUMBER OF ARGUMENTS")
+        print("[ERROR] INVALID NUMBER OF ARGUMENTS.")
         print('main.py -i <inputfile> -o <outputformat>')
         sys.exit(2)
     except InvalidArguments:
-        print('[ERROR] WRONG ARGUMENTS')
+        print('[ERROR] WRONG ARGUMENTS.')
         print('main.py -i <inputfile> -o <outputformat>')
         sys.exit(2)
     except FileNotExists:
-        print('[ERROR] FILE DOES NOT EXIST')
-        print('main.py -i <inputfile> -o <outputformat>')
+        print('[ERROR] FILE DOES NOT EXIST. YOU SHOULD USE AN EXISTING FILE.')
         sys.exit(2)
     except FileInaccessible:
-        print('[ERROR] FILE IS INACESSIBLE')
-        print('main.py -i <inputfile> -o <outputformat>')
+        print('[ERROR] FILE IS INACESSIBLE. PLEASE, CHECK THE PERMISSIONS ')
         sys.exit(2)
     except IsADirectory:
-        print('[ERROR] FILE_PATH IS A DIRECTORY')
-        print('main.py -i <inputfile> -o <outputformat>')
+        print('[ERROR] FILE_PATH SHOULD BE AN AUDIO.')
         sys.exit(2)
     except:
         print('[ERROR] AN UNEXPECTED ERROR OCCURRED.')

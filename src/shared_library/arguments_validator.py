@@ -20,10 +20,10 @@ def file_accessible(file_path: str) -> None:
 
     except FileNotFoundError:
         raise FileNotExists
-    except IOError:
-        raise FileInaccessible
     except IsADirectoryError:
         raise IsADirectory
+    except IOError:
+        raise FileInaccessible
 
 
 def load_arguments(arguments: list) -> list:
