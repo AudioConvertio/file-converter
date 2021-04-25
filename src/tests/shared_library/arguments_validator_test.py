@@ -25,3 +25,7 @@ class TestArgumentsValidator(object):
     def test_file_accessible_file_not_found(self):
         with pytest.raises(FileNotExists):
             file_accessible('#')
+
+    def test_file_accessible_file_is_directory(self):
+        with pytest.raises(IsADirectory):
+            file_accessible('classes')
