@@ -26,3 +26,9 @@ class FileInaccessible(Error):
     """Raised when the file is not acessible
     """
     pass
+
+
+class IsADirectory(Error):
+    """Raised when the file_path is not a file
+    """
+    pass
