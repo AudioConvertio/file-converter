@@ -33,4 +33,5 @@ class Audio():
         Args:
             output_format (str): the file output format
         """
-        pass
+        output = AudioSegment.from_file(self.audio_path, format=output_format)
+        return output.export(self.audio_path.replace(self.audio_type, f'.{output_format}'), format="mp3")
