@@ -1,5 +1,5 @@
 import pytest
-from shared_library.arguments_validator import load_arguments, LIST_OF_ACCEPTED_FORMATS
+from shared_library.arguments_validator import load_arguments, file_accessible, LIST_OF_ACCEPTED_FORMATS
 from classes.custom_exceptions import *
 
 
@@ -21,3 +21,7 @@ class TestArgumentsValidator(object):
     def test_load_arguments_valid_format_type(self):
         args = load_arguments([('-i', 'archive'), ('-o', 'wmv')])
         assert args[1] in LIST_OF_ACCEPTED_FORMATS
+
+    def test_file_accessible_file_not_found(self):
+        with pytest.raises(FileNotExists):
+            file_accessible('#')
