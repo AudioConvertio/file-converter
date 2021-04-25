@@ -1,6 +1,6 @@
 import sys
 import getopt
-from classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, FileNotExists, FileInaccessible
+from classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, FileNotExists, FileInaccessible, IsADirectory
 from shared_library.arguments_validator import load_arguments, file_accessible
 
 NUMBER_OF_ARGUMENTS = 4
@@ -36,6 +36,10 @@ def main(argv: list) -> None:
         sys.exit(2)
     except FileInaccessible:
         print('[ERROR] FILE IS INACESSIBLE')
+        print('main.py -i <inputfile> -o <outputformat>')
+        sys.exit(2)
+    except IsADirectory:
+        print('[ERROR] FILE_PATH IS A DIRECTORY')
         print('main.py -i <inputfile> -o <outputformat>')
         sys.exit(2)
     except:
