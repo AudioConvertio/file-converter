@@ -1,5 +1,6 @@
 import sys
 import getopt
+from classes.audio_converter import Audio
 from classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, FileNotExists, FileInaccessible, IsADirectory
 from shared_library.arguments_validator import load_arguments, file_accessible
 
@@ -17,10 +18,11 @@ def main(argv: list) -> None:
 
         input_file, output_format = load_arguments(opts)
 
-        print(f'Input file is {input_file}')
-        print(f'Output file is {output_format}')
-
         file_accessible(input_file)
+
+        audio = Audio(input_file)
+        print(audio)
+        audio.convert_file(output_format)
 
     except WrongNumberOfArguments:
         print("[ERROR] INVALID NUMBER OF ARGUMENTS")
