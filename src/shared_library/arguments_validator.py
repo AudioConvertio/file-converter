@@ -3,7 +3,7 @@ from classes.custom_exceptions import FileNotExists, FileInaccessible
 LIST_OF_ACCEPTED_FORMATS = []
 
 
-def file_accessible(file_path: str):
+def file_accessible(file_path: str) -> None:
     """Tries to open the file to validate if it is accessible
 
     Args:
