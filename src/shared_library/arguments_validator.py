@@ -1,4 +1,4 @@
-from classes.custom_exceptions import FileNotExists, FileInaccessible
+from classes.custom_exceptions import FileNotExists, FileInaccessible, IsADirectory
 
 LIST_OF_ACCEPTED_FORMATS = []
 
@@ -22,6 +22,8 @@ def file_accessible(file_path: str) -> None:
         raise FileNotExists
     except IOError:
         raise FileInaccessible
+    except IsADirectoryError:
+        raise IsADirectory
 
 
 def load_arguments(arguments: list) -> list:
