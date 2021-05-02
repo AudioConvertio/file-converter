@@ -18,7 +18,7 @@ class Audio():
         self.input_format = input_format
 
     def __repr__(self) -> str:
-        return f"This is my audio_path: {self.audio_dir} and this is my audio input: {self.input_format}"
+        return f"This is my audio_path: {self.audios_dir} and this is my audio input: {self.input_format}"
 
     def convert_files(self, output_format: str) -> None:
         """Iterates over every file in the dir with the input_format and
