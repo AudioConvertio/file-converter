@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import pytest
 from audio_convertio.shared_library.arguments_validator import dir_accessible
 from audio_convertio.classes.custom_exceptions import *
