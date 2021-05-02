@@ -1,8 +1,8 @@
 import sys
 import getopt
-from classes.audio_converter import Audio
-from classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, FileNotExists, FileInaccessible, IsADirectory
-from shared_library.arguments_validator import load_arguments, file_accessible
+from audio_convertio.classes.audio_converter import Audio
+from audio_convertio.classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, FileNotExists, FileInaccessible, IsADirectory
+from audio_convertio.shared_library.arguments_validator import load_arguments, file_accessible
 
 NUMBER_OF_ARGUMENTS = 4
 
