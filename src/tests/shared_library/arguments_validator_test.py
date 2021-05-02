@@ -1,6 +1,6 @@
 import pytest
-from shared_library.arguments_validator import load_arguments, file_accessible, LIST_OF_ACCEPTED_FORMATS
-from classes.custom_exceptions import *
+from audio_convertio.shared_library.arguments_validator import load_arguments, file_accessible, LIST_OF_ACCEPTED_FORMATS
+from audio_convertio.classes.custom_exceptions import *
 
 
 class TestArgumentsValidator(object):

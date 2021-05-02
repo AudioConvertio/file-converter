@@ -1,4 +1,4 @@
-from classes.custom_exceptions import FileNotExists, FileInaccessible, IsADirectory
+from audio_convertio.classes.custom_exceptions import FileNotExists, FileInaccessible, IsADirectory
 
 LIST_OF_ACCEPTED_FORMATS = ['wmv']
 
