@@ -30,16 +30,16 @@ To run this repository by yourself you will need to install python3 in your mach
 $ git clone <https://github.com/AudioConvertio/file-converter>
 
 # Access the project page on your terminal
-$ cd file-converter
+$ cd file-converter/src
 
 # Install all the requirements
 $ pip install -r requirements.txt
 
 # Access the src on your terminal
-$ cd src
+$ cd audio_convertio
 
 # Execute the main program with parameters
-$ python main.py -i <path_to_audio_file> -o <output_format>
+$ python audio_convertio.py -i <path_to_audio_file> -o <output_format>
 
 # Them it's just wait for the code run and the converted audio file will be in the same folder of the audio file
 ```
