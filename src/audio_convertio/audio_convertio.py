@@ -1,48 +1,35 @@
 import sys
-import getopt
+import argparse
 from audio_convertio.classes.audio_converter import Audio
-from audio_convertio.classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, FileNotExists, FileInaccessible, IsADirectory
-from audio_convertio.shared_library.arguments_validator import load_arguments, file_accessible
+from audio_convertio.classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, IsAFile, DirectoryNotExists
+from audio_convertio.shared_library.arguments_validator import dir_accessible
 
 NUMBER_OF_ARGUMENTS = 4
 
 
 def main(argv: list) -> None:
     try:
-        if len(argv) != NUMBER_OF_ARGUMENTS:
-            raise WrongNumberOfArguments
-        try:
-            opts, args = getopt.getopt(argv, "i:o:", ["ifile=", "oformat"])
-        except getopt.GetoptError:
-            raise InvalidArguments
+        parser = argparse.ArgumentParser()
+        parser.add_argument(
+            "audio_dir", help="The Directory where the audios are stored")
+        parser.add_argument(
+            "input_format", help="The format of the audios to be converted")
+        parser.add_argument(
+            "output_format", help="The format that the audios will be converted")
 
-        input_file, output_format = load_arguments(opts)
+        args = parser.parse_args()
+        dir_accessible(args.audio_dir)
+        audio = Audio(args.audio_dir, args.input_format)
+        audio.convert_files(args.output_format)
 
-        file_accessible(input_file)
-
-        audio = Audio(input_file)
-        print(audio)
-        audio.convert_file(output_format)
-
-    except WrongNumberOfArguments:
-        print("[ERROR] INVALID NUMBER OF ARGUMENTS.")
-        print('main.py -i <inputfile> -o <outputformat>')
+    except IsAFile:
+        print('[ERROR] DIRECTORY_PATH SHOULD BE A DIRECTORY.')
         sys.exit(2)
-    except InvalidArguments:
-        print('[ERROR] WRONG ARGUMENTS.')
-        print('main.py -i <inputfile> -o <outputformat>')
-        sys.exit(2)
-    except FileNotExists:
-        print('[ERROR] FILE DOES NOT EXIST. YOU SHOULD USE AN EXISTING FILE.')
-        sys.exit(2)
-    except FileInaccessible:
-        print('[ERROR] FILE IS INACESSIBLE. PLEASE, CHECK THE PERMISSIONS ')
-        sys.exit(2)
-    except IsADirectory:
-        print('[ERROR] FILE_PATH SHOULD BE AN AUDIO.')
+    except DirectoryNotExists:
+        print('[ERROR] DIRECTORY DOES NOT EXIST. YOU SHOULD USE AN EXISTING DIRECTORY.')
         sys.exit(2)
     except:
-        print('[ERROR] AN UNEXPECTED ERROR OCCURRED.')
+        raise
         sys.exit(2)
 
 
