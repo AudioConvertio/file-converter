@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 class Error(Exception):
     """Base class for other exceptions
     """

@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from os import path
 from audio_convertio.classes.custom_exceptions import IsAFile, DirectoryNotExists
 
