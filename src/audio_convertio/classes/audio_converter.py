@@ -1,8 +1,5 @@
 import os
 
-import matplotlib.pyplot as plt
-import numpy as np
-
 from pydub import AudioSegment
 from pydub.playback import play
 

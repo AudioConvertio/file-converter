@@ -1,5 +1,4 @@
 import sys
-import getopt
 import argparse
 from audio_convertio.classes.audio_converter import Audio
 from audio_convertio.classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, IsAFile, DirectoryNotExists
