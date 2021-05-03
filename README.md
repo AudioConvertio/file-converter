@@ -41,7 +41,7 @@ $ audio_convertio  <path_to_audios_directory> <input_format> <output_format>
 # Them it's just wait for the code run and the converted audio file will be in the same folder of the audio file passed as argument
 ```
 
-![demonstration](https://cdn.discordapp.com/attachments/539836343094870016/835936244784431134/unknown.png)
+![demonstration](https://cdn.discordapp.com/attachments/539836343094870016/838615313435459584/unknown.png)
 
 ## Technologies
 
