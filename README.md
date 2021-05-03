@@ -19,7 +19,7 @@ An audio converter that allows you to convert your audio files with a single com
 
 ## Requirements
 
-To run this repository by yourself you will need to install python3 in your machine and them install all the requirements inside the [requirements](requirements.txt) file
+To run this repository by yourself you will need to install python3 in your machine.
 
 ## How to use
 
@@ -30,18 +30,15 @@ To run this repository by yourself you will need to install python3 in your mach
 $ git clone <https://github.com/AudioConvertio/file-converter>
 
 # Access the project page on your terminal
-$ cd file-converter/src
+$ cd file-converter
 
 # Install all the requirements
-$ pip install -r requirements.txt
+$ pip install .
 
-# Access the src on your terminal
-$ cd audio_convertio
+# Execute the program with parameters
+$ audio_convertio  <path_to_audios_directory> <input_format> <output_format>
 
-# Execute the main program with parameters
-$ python audio_convertio.py -i <path_to_audio_file> -o <output_format>
-
-# Them it's just wait for the code run and the converted audio file will be in the same folder of the audio file
+# Them it's just wait for the code run and the converted audio file will be in the same folder of the audio file passed as argument
 ```
 
 ![demonstration](https://cdn.discordapp.com/attachments/539836343094870016/835936244784431134/unknown.png)
