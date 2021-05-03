@@ -40,4 +40,4 @@ class Audio():
         """
 
         output = AudioSegment.from_file(file_path, format=output_format)
-        return output.export(file_path.replace(self.input_format, f'.{output_format}'), format=output_format)
+        return output.export(file_path.replace(self.input_format, f'{output_format}'), format=output_format)
