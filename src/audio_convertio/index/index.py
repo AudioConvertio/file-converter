@@ -1,9 +1,8 @@
 #!/usr/bin/env python3
 import argparse
 import sys
-import os
 from audio_convertio.classes.audio_converter import Audio
-from audio_convertio.classes.custom_exceptions import WrongNumberOfArguments, InvalidArguments, IsAFile, DirectoryNotExists
+from audio_convertio.classes.custom_exceptions import IsAFile, DirectoryNotExists
 from audio_convertio.shared_library.arguments_validator import dir_accessible
 
 
