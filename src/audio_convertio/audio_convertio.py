@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import sys
 import argparse
 from audio_convertio.index.index import convert
 
