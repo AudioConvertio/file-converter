@@ -29,6 +29,7 @@ class Audio():
         """
         for file in os.listdir(self.audios_dir):
             if file.endswith(self.input_format):
+                print(f"Converting {file} to {output_format}")
                 self.convert_file(os.path.join(
                     self.audios_dir, file), output_format)
 
