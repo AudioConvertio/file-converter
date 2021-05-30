@@ -34,9 +34,6 @@ class Audio():
     def convert_files_parallel(self) -> None:
         """Iterates over every file in the dir with the input_format and
         converts it to the output_format in a parallel way
-
-        Args:
-            output_format (str): the file output format
         """
         file_paths = []
         for file in os.listdir(self.audios_dir):
