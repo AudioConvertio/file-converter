@@ -48,3 +48,4 @@ $ audio_convertio  <path_to_audios_directory> <input_format> <output_format>
 - Python3
 - Pytest
 - Pydub
+- Multiprocessing
